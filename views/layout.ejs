@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>WDI Project 2</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/app.js" charset="utf-8"></script>
+  <% include ./partials/_stylesheets.ejs %>
+  <% include ./partials/_scripts.ejs %>
+</head>
+<body>
+  <h1>BIG EVENTS</h1>
+  <% include ./partials/_navbar %>
+
+  <main class="row">
+    <% for (const type in messages) { %>
+      <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+    <% } %>
+
+    <%- body %>
+  </main>
+
+  <% include ./partials/_scripts.ejs %>
+</body>
+</html>

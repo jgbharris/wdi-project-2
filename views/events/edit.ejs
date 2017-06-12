@@ -1,0 +1,34 @@
+<h1>Edit</h1>
+
+
+
+<form method="POST" action="/events/<%= event.id %>" enctype="multipart/form-data">
+  <input type="hidden" name="_method" value="PUT" >
+
+  <div>
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image">
+  </div>
+
+<label for="name">Name</label>
+<input class="u-full-width" type="text" name="name" id="name" value="<%= event.name %>" required>
+</div>
+
+<div>
+  <label for="location">Location</label>
+  <input class="u-full-width" type="text" name="location" id="location" value="<%= event.location %>" required>
+</div>
+
+<div>
+  <label for="date">Date</label>
+  <input class="u-full-width" type="text" name="date" id="date" value="<%= event.date %>" required>
+</div>
+
+<div>
+  <label for="description">Description</label>
+  <input class="u-full-width" type="text" name="description" id="description" value="<%= event.description %>" required>
+</div>
+
+<button class="button-primary u-full-width">Edit</button>
+</form>
+</div>

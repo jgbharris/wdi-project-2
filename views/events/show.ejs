@@ -1,0 +1,48 @@
+
+  <h1><%= event.name %></h1>
+    <img src="<%= event.imageSRC %>" alt="<%= event.name %>">
+
+  <p>
+    <%= event.location %><br>
+    <%= event.date %><br>
+    <%= event.description %><br>
+  </p>
+
+  <% if(locals.isLoggedIn) { %>
+    <section>
+      <h4>Leave comment</h4>
+      <form method="POST" action="/events/<%= event.id %>/comments">
+      <textarea name="content" id="content" placeholder="Comment"></textarea>
+      <button class="button">Leave a comment</button>
+      </form>
+    </section>
+  <% } %>
+  <section>
+    <h4>Comments</h4>
+    <% event.comments.forEach((comment) => { %>
+      <p><%= comment.content %></p>
+      <small><%= comment.createdBy.username %></small>
+
+      <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+        <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Delete comment</button>
+        </form>
+    <%  } %>
+  <% }) %>
+  </section>
+
+
+
+  <h3>Created By: </h3>
+  <p><%= event.createdBy.username %></p>
+
+  <% if(locals.isLoggedIn && event.belongsTo(user)) { %>
+    <a href="/events/<%= event.id %>/edit">Edit</a>
+    <form method="POST" action="/events/<%= event.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete event</button>
+    </form>
+  <% } %>
+
+</div>
