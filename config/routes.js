@@ -43,6 +43,12 @@ router.route('/events/:id/comments')
 router.route('/events/:id/comments/:commentId')
     .delete(secureRoute, events.deleteComment);
 
+router.route('/events/:id/attendees')
+  .post(secureRoute, events.createAttendee); // ADDED IN FOR GUESTLIST
+
+router.route('/events/:id/attendees/:attendeeId')
+    .delete(secureRoute, events.deleteAttendee); // ADDED IN FOR GUESTLIST
+
 router.route('/profile')
   .get(secureRoute, registrationsController.show)
   .post(secureRoute, upload.single('image'), registrationsController.update)

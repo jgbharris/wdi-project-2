@@ -15,19 +15,17 @@ commentSchema.methods.belongsTo = function commentBelongsTo(user) {
   return user.id === this.createdBy.toString();
 };
 
-
-
-
 const eventSchema = new mongoose.Schema({
-  image: {type: String, required: true},
+  image: {type: String },
   name: { type: String, required: true },
   location: { type: String, required: true },
-  lat: {type: Number, required: true},
-  lng: {type: Number, required: true},
+  lat: {type: Number, required: true },
+  lng: {type: Number, required: true },
   date: { type: String, required: true },
   description: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true},
-  comments: [ commentSchema ]
+  comments: [ commentSchema ],
+  attendees: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
 eventSchema

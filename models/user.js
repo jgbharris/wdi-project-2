@@ -3,8 +3,8 @@ const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
 const userSchema = new mongoose.Schema({
-  firstName: {type: String },
-  lastName: {type: String },
+  firstName: {type: String, required: true },
+  lastName: {type: String, required: true },
   image: {type: String },
   email: { type: String, required: true, trim: true, unique: true },
   username: { type: String, required: true, trim: true, unique: true },
@@ -16,6 +16,12 @@ userSchema
   .get(function getImageSRC() {
     if(!this.image) return null;
     return `https://s3-eu-west-1.amazonaws.com/wdi-27-ldn-project-2/${this.image}`;
+  });
+
+userSchema
+  .virtual('fullName')
+  .get(function getFullName() {
+    return `${this.firstName} ${this.lastName}`;
   });
 
 userSchema.pre('remove', function removeImage(next) {

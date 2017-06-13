@@ -16,6 +16,13 @@ User
     firstName: 'James',
     lastName: 'Harris',
     username: 'jgbharris',
+    email: 'jgbharris@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  },{
+    firstName: 'Jimbo',
+    lastName: 'Harris',
+    username: 'jimboharris88',
     email: 'jimboharris88@googlemail.com',
     password: 'password',
     passwordConfirmation: 'password'
@@ -24,14 +31,18 @@ User
     console.log(`${users.length} users created`);
     return Event
       .create([{
-        name: 'Banging Big Beats',
-        location: 'Ministry of Sound',
+        name: 'Big beat manifesto',
+        location: 'Ministry of sound',
+        lat: 51.515419,
+        lng: -0.141099,
         date: '22/07/2017',
         description: 'Big beats are the best',
         createdBy: users[0]
       },{
-        name: 'Sit on my bass',
+        name: 'Bass Fest',
         location: 'Fabric',
+        lat: 51.515419,
+        lng: -0.141099,
         date: '25/07/2017',
         description: 'DJ mental cracking out some banging tunes til the early hours',
         createdBy: users[0]

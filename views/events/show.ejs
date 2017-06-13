@@ -11,12 +11,16 @@
 
 <% if(locals.isLoggedIn) { %>
   <section>
-    <form method="POST" action="/events/<%= event.id %>/comments">
-    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <form method="POST" action="/events/<%= event.id %>/attendees">
     <button class="button">Attend</button>
   </form>
   </section>
   <% } %>
+
+  <h4>Attendees</h4>
+  <% event.attendees.forEach((attendee) => { %>
+    <p><%= attendee.fullName %></p>
+  <% }) %>
 
 <section id="location">
   <div class="container">

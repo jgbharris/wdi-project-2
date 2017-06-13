@@ -33,7 +33,7 @@ function createRoute(req, res, next) {
 function showRoute(req, res, next) {
   Event
     .findById(req.params.id)
-    .populate('createdBy comments.createdBy')
+    .populate('createdBy comments.createdBy attendees')
     .exec()
     .then((event) => {
       if(!event) return res.notFound();
@@ -121,6 +121,38 @@ function deleteCommentRoute(req, res, next) {
    .catch(next);
 }
 
+function createAttendeeRoute(req, res, next) {
+  Event
+    .findById(req.params.id)
+    .exec()
+    .then((event) => {
+      if(!event) return res.notFound();
+
+      console.log(event, req.user);
+
+      event.attendees.push(req.user);
+      return event.save();
+    })
+    .then((event) => res.redirect(`/events/${event.id}`))
+    .catch(next);
+}
+
+function deleteAttendeeRoute(req, res, next) {
+
+  Event
+   .findById(req.params.id)
+   .exec()
+   .then((event) => {
+     if(!event) return res.notFound();
+
+     event.attendees.filter(attendeeId => attendeeId.toString() !== req.user.id);
+
+     return event.save();
+   })
+   .then((event) => res.redirect(`/events/${event.id}`))
+   .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   new: newRoute,
@@ -130,5 +162,7 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   createComment: createCommentRoute,
-  deleteComment: deleteCommentRoute
+  deleteComment: deleteCommentRoute,
+  createAttendee: createAttendeeRoute,
+  deleteAttendee: deleteAttendeeRoute
 };
