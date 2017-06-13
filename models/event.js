@@ -22,6 +22,8 @@ const eventSchema = new mongoose.Schema({
   image: {type: String, required: true},
   name: { type: String, required: true },
   location: { type: String, required: true },
+  lat: {type: Number, required: true},
+  lng: {type: Number, required: true},
   date: { type: String, required: true },
   description: { type: String, required: true },
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true},
@@ -36,6 +38,7 @@ eventSchema
   });
 
 eventSchema.pre('remove', function removeImage(next) {
+  if(!this.image) return next();
   s3.deleteObject({ Key: this.image }, next);
 });
 

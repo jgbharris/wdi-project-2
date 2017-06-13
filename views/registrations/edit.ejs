@@ -1,7 +1,6 @@
 
 
-<form method="POST" action="/users/<%= user.id %>" enctype="multipart/form-data">
-  <input type="hidden" name="_method" value="PUT">
+<form method="POST" action="/profile" enctype="multipart/form-data">
 
   <div>
     <label for="image">Image</label>
@@ -28,15 +27,6 @@
     <input type="email" name="email" id="email" value="<%= user.email %>">
   </div>
 
-  <div>
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password">
-  </div>
-
-  <div>
-    <label for="passwordConfirmation">Password Confirmation</label>
-    <input type="password" name="passwordConfirmation" id="passwordConfirmation">
-  </div>
 
   <button class="button">Edit</button>
 </form>

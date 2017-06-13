@@ -39,7 +39,8 @@ router.route('/logout')
 // .delete(secureRoute, registrationsController.delete);
 
 router.route('/profile/edit')
-.get(secureRoute, registrationsController.edit);
+.get(secureRoute, registrationsController.edit)
+.post(secureRoute, upload.single('image'), registrationsController.update);
 
 router.route('/events/:id/comments')
   .post(secureRoute, events.createComment);

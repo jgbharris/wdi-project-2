@@ -22,7 +22,7 @@ function createRoute(req, res, next) {
     .create(req.body)
     .then(() => res.redirect('/events'))
     .catch((err) => {
-      if(err.name === 'ValidationError') return res.badRequest(`/events/${req.params.id}/edit`, err.toString());
+      if(err.name === 'ValidationError') return res.badRequest(`/events/new`, err.toString());
       next(err);
     });
 }

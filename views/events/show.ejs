@@ -1,21 +1,33 @@
 
-  <h1><%= event.name %></h1>
-    <img src="<%= event.imageSRC %>" alt="<%= event.name %>">
+<h1><%= event.name %></h1>
+<img src="<%= event.imageSRC %>" alt="<%= event.name %>">
 
-  <p>
-    <%= event.location %><br>
-    <%= event.date %><br>
-    <%= event.description %><br>
-  </p>
+<p>
+  <%= event.location %><br>
+  <%= event.postcode %><br>
+  <%= event.date %><br>
+  <%= event.description %><br>
+</p>
 
-  <% if(locals.isLoggedIn) { %>
-    <section>
-      <h4>Leave comment</h4>
-      <form method="POST" action="/events/<%= event.id %>/comments">
-      <textarea name="content" id="content" placeholder="Comment"></textarea>
-      <button class="button">Leave a comment</button>
-      </form>
-    </section>
+<section id="location">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 offset-sm-1">
+        <h2>Location</h2>
+        <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% if(locals.isLoggedIn) { %>
+  <section>
+    <h4>Leave comment</h4>
+    <form method="POST" action="/events/<%= event.id %>/comments">
+    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <button class="button">Leave a comment</button>
+  </form>
+  </section>
   <% } %>
   <section>
     <h4>Comments</h4>
@@ -25,24 +37,26 @@
 
       <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
         <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
-          <input type="hidden" name="_method" value="DELETE">
-          <button>Delete comment</button>
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete comment</button>
         </form>
-    <%  } %>
-  <% }) %>
-  </section>
+        <%  } %>
+        <% }) %>
+      </section>
 
 
 
-  <h3>Created By: </h3>
-  <p><%= event.createdBy.username %></p>
+      <h3>Created By: </h3>
+      <p><%= event.createdBy.username %></p>
 
-  <% if(locals.isLoggedIn && event.belongsTo(user)) { %>
-    <a href="/events/<%= event.id %>/edit">Edit</a>
-    <form method="POST" action="/events/<%= event.id %>">
-      <input type="hidden" name="_method" value="DELETE">
-      <button>Delete event</button>
-    </form>
-  <% } %>
+      <% if(locals.isLoggedIn && event.belongsTo(user)) { %>
+        <a href="/events/<%= event.id %>/edit">Edit</a>
+        <form method="POST" action="/events/<%= event.id %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <button>Delete event</button>
+        </form>
+        <% } %>
 
-</div>
+      </div>
+
+    </body>

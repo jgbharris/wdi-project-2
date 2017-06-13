@@ -10,24 +10,41 @@
     <input type="file" name="image" id="image">
   </div>
 
-<label for="name">Name</label>
-<input class="u-full-width" type="text" name="name" id="name" value="<%= event.name %>" required>
-</div>
+  <div>
+    <label for="name">Name</label>
+    <input class="u-full-width" type="text" name="name" id="name" value="<%= event.name %>" required>
+  </div>
 
-<div>
-  <label for="location">Location</label>
-  <input class="u-full-width" type="text" name="location" id="location" value="<%= event.location %>" required>
-</div>
+  <div>
+    <label for="location">Location</label>
+    <input class="u-full-width" type="text" name="location" id="location" value="<%= event.location %>" required>
+  </div>
 
-<div>
-  <label for="date">Date</label>
-  <input class="u-full-width" type="text" name="date" id="date" value="<%= event.date %>" required>
-</div>
+  <div>
+    <label for="postcode">Postcode</label>
+    <input class="u-full-width" type="text" name="postcode" id="postcode" required>
+  </div>
 
-<div>
-  <label for="description">Description</label>
-  <input class="u-full-width" type="text" name="description" id="description" value="<%= event.description %>" required>
-</div>
+  <div>
+    <label for="date">Date</label>
+    <input class="u-full-width" type="text" name="date" id="date" value="<%= event.date %>" required>
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <input class="u-full-width" type="text" name="description" id="description" value="<%= event.description %>" required>
+  </div>
+
+  <section id="location">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 offset-sm-1">
+          <h2>Location</h2>
+          <div id="map" data-lat="51.515209" data-lng="-0.072132"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 <button class="button-primary u-full-width">Edit</button>
 </form>

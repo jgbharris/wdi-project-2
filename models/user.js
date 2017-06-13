@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
 const userSchema = new mongoose.Schema({
+  firstName: {type: String },
+  lastName: {type: String },
   image: {type: String },
   email: { type: String, required: true, trim: true, unique: true },
   username: { type: String, required: true, trim: true, unique: true },

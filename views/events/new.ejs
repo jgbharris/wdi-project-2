@@ -4,6 +4,9 @@
 
 <form method="POST" action="/events" enctype="multipart/form-data">
 
+  <input type="hidden" name="lat" id="lat">
+  <input type="hidden" name="lng" id="lng">
+
   <div>
     <label for="image">Image</label>
     <input type="file" name="image" id="image">
@@ -16,7 +19,7 @@
 
   <div>
     <label for="location">Location</label>
-    <input class="u-full-width" type="text" name="location" id="location" required>
+    <input class="u-full-width autocomplete" type="text" name="location" id="location" required>
   </div>
 
   <div>
