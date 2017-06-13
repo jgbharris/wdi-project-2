@@ -33,11 +33,6 @@ router.route('/login')
 router.route('/logout')
 .get(sessionsController.delete);
 
-// router.route('/profile')
-// .get(secureRoute, registrationsController.show)
-// .put(secureRoute, upload.single('image'), registrationsController.update)
-// .delete(secureRoute, registrationsController.delete);
-
 router.route('/profile/edit')
 .get(secureRoute, registrationsController.edit)
 .post(secureRoute, upload.single('image'), registrationsController.update);
@@ -48,12 +43,10 @@ router.route('/events/:id/comments')
 router.route('/events/:id/comments/:commentId')
     .delete(secureRoute, events.deleteComment);
 
-
 router.route('/profile')
   .get(secureRoute, registrationsController.show)
   .post(secureRoute, upload.single('image'), registrationsController.update)
   .delete(secureRoute, registrationsController.delete);
-
 
 router.all('*', (req, res) => res.notFound());
 

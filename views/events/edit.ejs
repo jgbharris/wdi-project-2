@@ -5,6 +5,10 @@
 <form method="POST" action="/events/<%= event.id %>" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="PUT" >
 
+  <input type="hidden" name="lat" id="lat">
+  <input type="hidden" name="lng" id="lng">
+
+
   <div>
     <label for="image">Image</label>
     <input type="file" name="image" id="image">
@@ -17,12 +21,8 @@
 
   <div>
     <label for="location">Location</label>
-    <input class="u-full-width" type="text" name="location" id="location" value="<%= event.location %>" required>
-  </div>
+    <input class="u-full-width autocomplete" type="text" name="location" id="location" value="<%= event.location %>" required>
 
-  <div>
-    <label for="postcode">Postcode</label>
-    <input class="u-full-width" type="text" name="postcode" id="postcode" required>
   </div>
 
   <div>
@@ -40,7 +40,7 @@
       <div class="row">
         <div class="col-sm-10 offset-sm-1">
           <h2>Location</h2>
-          <div id="map" data-lat="51.515209" data-lng="-0.072132"></div>
+          <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
         </div>
       </div>
     </div>

@@ -9,6 +9,15 @@
   <%= event.description %><br>
 </p>
 
+<% if(locals.isLoggedIn) { %>
+  <section>
+    <form method="POST" action="/events/<%= event.id %>/comments">
+    <textarea name="content" id="content" placeholder="Comment"></textarea>
+    <button class="button">Attend</button>
+  </form>
+  </section>
+  <% } %>
+
 <section id="location">
   <div class="container">
     <div class="row">
@@ -43,7 +52,6 @@
         <%  } %>
         <% }) %>
       </section>
-
 
 
       <h3>Created By: </h3>

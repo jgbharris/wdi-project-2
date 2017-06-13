@@ -2,17 +2,22 @@
 $(() => {
   const $map = $('#map');
   const $autocomplete = $('.autocomplete');
+  const $date = $('#date');
   let map = null;
   if($map.length) initMap();
   if($autocomplete.length) initAutocomplete();
+
+  function pickDate() {
+    $date.datepicker();
+  }
+
+  pickDate();
 
   function addCoordinates(latLng) {
     console.log('inside addCoordinates()');
     $('#lat').val(latLng.lat);
     $('#lng').val(latLng.lng);
   }
-
-
 
   function initMap() {
     const lat = $map.data('lat');
@@ -37,17 +42,13 @@ $(() => {
     });
   }
 
-
   function initAutocomplete() {
     const autocomplete = new google.maps.places.Autocomplete($autocomplete.get(0), { componentRestrictions: { country: 'gb' } });
-
     autocomplete.addListener('place_changed', () => {
       console.log('changed');
       const latLng = autocomplete.getPlace().geometry.location.toJSON();
       addCoordinates(latLng);
     });
   }
-
-
 
 });

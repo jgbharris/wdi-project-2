@@ -8,22 +8,17 @@
   <% include ./partials/_navbar %>
 </head>
 
-<body>
 
-  <h1>BIG EVENTS</h1>
+  <body>
 
-  <form method="GET">
-    <label>Search by name</label>
-    <input type="text" name="q" placeholder="Search">
-  </form>
+    <h1>BIG EVENTS</h1>
 
-  <main class="row">
+    <main class="row">
     <% for (const type in messages) { %>
       <p class="alert alert-<%= type %>"><%= messages[type] %></p>
       <% } %>
-
       <%- body %>
     </main>
 
   </body>
-  </html>
+</html>

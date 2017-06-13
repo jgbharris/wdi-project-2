@@ -1,8 +1,11 @@
 const Event = require('../models/event');
 
+
 function indexRoute(req, res, next) {
+  const regex = new RegExp(req.query.q, 'i');
+  const query = { name: regex };
   Event
-    .find()
+    .find(query)
     .populate('createdBy')
     .exec()
     .then((events) => res.render('events/index', { events }))
