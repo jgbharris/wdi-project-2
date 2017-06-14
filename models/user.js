@@ -3,12 +3,13 @@ const bcrypt = require('bcrypt');
 const s3 = require('../lib/s3');
 
 const userSchema = new mongoose.Schema({
-  firstName: {type: String, required: true },
-  lastName: {type: String, required: true },
+  firstName: {type: String },
+  lastName: {type: String },
   image: {type: String },
-  email: { type: String, required: true, trim: true, unique: true },
-  username: { type: String, required: true, trim: true, unique: true },
-  password: { type: String, required: true }
+  email: { type: String, required: true, trim: true },
+  username: { type: String, required: true, trim: true },
+  password: { type: String },
+  facebookId: {type: Number }
 });
 
 userSchema
@@ -35,6 +36,9 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next) {
+  if(!this.password && ! this.facebookId) {
+    this.invalidate('password', 'required');
+  }
   if(this._passwordConfirmation && this._passwordConfirmation !== this.password) this.invalidate('passwordConfirmation', 'does not match');
   next();
 });

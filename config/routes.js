@@ -4,6 +4,11 @@ const registrationsController = require('../controllers/registrations');
 const secureRoute = require('../lib/secureRoute');
 const events         = require('../controllers/events');
 const upload = require('../lib/upload');
+const oauth = require('../controllers/oauth');
+
+
+router.route('/oauth/facebook')
+  .get(oauth.facebook);
 
 router.get('/', (req, res) => res.render('statics/index'));
 
