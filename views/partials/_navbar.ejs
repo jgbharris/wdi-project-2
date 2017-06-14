@@ -1,20 +1,22 @@
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="dropdown menu" data-dropdown-menu>
-      <li><a href="/">Homepage</a></li>
-    <li><a href="/events">Browse Events</a></li>
-    <li><a href="/events/new">Create Event</a></li>
-    </ul>
-  </div>
-  <div class="top-bar-right">
-    <ul class="dropdown menu" data-dropdown-menu>
+<nav>
+  <div class="top-bar">
+    <ul>
       <% if(!locals.isLoggedIn) { %>
-        <li><a href="/register">Register</a></li>
-        <li><a href="/login">Login</a></li>
+      <li><a href="/register">Register</a></li>
+      <li><a href="/login">Login</a></li>
       <% } else { %>
-        <li><a href="/profile"><%= user.username %></a></li>
-        <li><a href="/logout">Logout</a></li>
-      <% } %>
+      <li><a href="/profile"><%= user.username %></a></li>
+      <li><a href="/logout">Logout</a></li>
+    <% } %>
     </ul>
+  <div >
+    <div>
+      <ul>
+        <li><a href="/events/new">Create Event</a></li>
+        <li><a href="/">Homepage</a></li>
+        <li><a href="/events">Browse Events</a></li>
+      </ul>
+    </div>
+    </div>
   </div>
-</div>
+</nav>

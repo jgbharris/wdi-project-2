@@ -4,3 +4,28 @@
     background-color: grey;
   }
 }
+nav {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 50px;
+    li {
+      float: right;
+      margin-left: 20px;
+      line-height: 40px;
+      &:last-of-type {
+        margin-left: 50px;
+      }
+      &.menu {
+        color: black;
+        cursor: pointer;
+        font-size: 20px;
+        display: none;
+      }
+      a {
+        color: black;
+      }
+    }
+  }
+}
