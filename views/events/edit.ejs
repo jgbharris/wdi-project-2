@@ -1,4 +1,8 @@
-<h1>Edit</h1>
+<div class="jumbotron">
+
+</div>
+
+<h1 id="pageTitle">Edit</h1>
 
 
 
@@ -9,30 +13,29 @@
   <input type="hidden" name="lng" id="lng" value="<%= event.lng %>">
 
 
-  <div>
-    <label for="image">Image</label>
+  <div class="col-6 offset-3">
+    <label for="image">Upload image</label>
     <input type="file" name="image" id="image">
   </div>
 
-  <div>
+  <div class="col-6 offset-3">
     <label for="name">Name</label>
-    <input class="u-full-width" type="text" name="name" id="name" value="<%= event.name %>" required>
+    <input type="text" name="name" id="name" value="<%= event.name %>" required>
   </div>
 
-  <div>
+  <div class="col-6 offset-3">
     <label for="location">Location</label>
-    <input class="u-full-width autocomplete" type="text" name="location" id="location" value="<%= event.location %>" required>
-
+    <input class=" autocomplete" type="text" name="location" id="location" value="<%= event.location %>" required>
   </div>
 
-  <div>
+<div class="col-6 offset-3">
     <label for="date">Date</label>
-    <input class="u-full-width" type="text" name="date" id="date" value="<%= event.date %>" required>
+    <input type="text" name="date" id="date" value="<%= event.date %>" required>
   </div>
 
-  <div>
+  <div class="col-6 offset-3">
     <label for="description">Description</label>
-    <input class="u-full-width" type="text" name="description" id="description" value="<%= event.description %>" required>
+    <input type="text" name="description" id="description" value="<%= event.description %>" required>
   </div>
 
   <section id="location">
@@ -46,6 +49,10 @@
     </div>
   </section>
 
-<button class="button-primary u-full-width">Edit</button>
+  <div id="formfield" class="col-6 offset-3">
+      <button id="createButton" class="button-primary">Edit</button>
+  </div>
+
+</div>
 </form>
 </div>

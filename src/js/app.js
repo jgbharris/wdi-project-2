@@ -59,7 +59,7 @@ $(() => {
       $('#word').fadeOut(400, function () {
         $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
       });
-    }, 1500);
+    }, 1000);
 
   }
 
@@ -77,7 +77,7 @@ $(() => {
         console.log(this);
         $(this).css('background-image', `url(${backgroundArray[count % backgroundArray.length]})`).fadeIn(400);
       });
-    }, 1500);
+    }, 1000);
   }
 
   backgroundChange();

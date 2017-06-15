@@ -1,15 +1,16 @@
-<h1>Create Event</h1>
+<h1 id="pageTitle">Create Event</h1>
 
+<div class="jumbotron">
 
-
+</div>
 <form method="POST" action="/events" enctype="multipart/form-data">
 
   <input type="hidden" name="lat" id="lat">
   <input type="hidden" name="lng" id="lng">
 
-  <div>
-    <label for="image">Image</label>
-    <input type="file" name="image" id="image">
+  <div class="col-6 offset-3">
+    <label id="imageUpload">Upload image</label>
+    <input placeholder="Upload image" class="inputfile" type="file" name="image">
   </div>
 
   <div id="formfield" class="col-6 offset-3">
@@ -28,6 +29,8 @@
     <input placeholder="Description" class="u-full-width" type="text" name="description" id="description" required>
   </div>
 
-  <button class="button-primary u-full-width">Create Event</button>
+  <div id="formfield" class="col-6 offset-3">
+    <button id="createButton" class="button-primary">Create Event!</button>
+  </div>
 
 </form>

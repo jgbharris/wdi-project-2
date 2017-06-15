@@ -88,15 +88,15 @@ nav {
 }
 
 #eventtitle {
-  font-size: 20px;
+  font-size: 30px;
   font-family: 'Orbitron', sans-serif;
   font-weight: bold;
 }
 
 #eventdetails {
-  font-size: 15px;
+  font-size: 20px;
   font-family: 'Poiret One', cursive;
-  font-weight: lighter;
+  font-weight: bold;
 }
 
 
@@ -107,11 +107,98 @@ nav {
 #eventsindex {
   background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('../assets/images/Logo2.jpg');
   background-repeat: repeat-x;
-  background-position: center;
+  background-position: right;
   background-size: contain;
   background-attachment: fixed;
 }
 
 #formfield {
   width: 100%;
+  color: grey;
+  font-family: 'Orbitron', sans-serif;
 }
+
+input {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: 'Orbitron', sans-serif;
+  color: grey;
+}
+
+#pageTitle {
+  text-align: center;
+  padding: 20px;
+}
+
+#createButton {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#imageUpload {
+  // text-align: center;
+  // width: 100%;
+}
+
+.jumbotron {
+  background-image: url('../assets/images/homepage1.jpg');
+  height: 30vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+;}
+
+
+label {
+  text-align: center;
+  width: 100%;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  color: black;
+}
+
+#tagline {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+}
+
+.inputfile {
+	opacity: 1;
+}
+
+#subheading {
+  text-align: center;
+  font-size: 20px;
+  width: 100%;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#location {
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+
+
+
+// .fileUpload {
+//     position: relative;
+//     overflow: hidden;
+//     margin: 10px;
+// }
+// input.filepload {
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     margin: 0;
+//     padding: 0;
+//     font-size: 20px;
+//     cursor: pointer;
+//     opacity: 0;
+//     filter: alpha(opacity=0);
+// }
