@@ -51,4 +51,35 @@ $(() => {
     });
   }
 
+  function intro() {
+    let count = 0;
+    const wordsArray = ['Go', 'Big', 'or', 'Go', 'Home!'];
+    setInterval(function () {
+      count++;
+      $('#word').fadeOut(400, function () {
+        $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
+      });
+    }, 1500);
+
+  }
+
+  intro();
+
+
+
+  function backgroundChange() {
+    let count = 0;
+    const backgroundArray = ['../assets/images/homepage1.jpg', '../assets/images/homepage2.jpg', '../assets/images/homepage3.jpg', '../assets/images/homepage4.jpg', '../assets/images/homepage5.jpg'];
+
+    setInterval(function () {
+      count++;
+      $('#homeimage').fadeOut(400, function() {
+        console.log(this);
+        $(this).css('background-image', `url(${backgroundArray[count % backgroundArray.length]})`).fadeIn(400);
+      });
+    }, 1500);
+  }
+
+  backgroundChange();
+
 });

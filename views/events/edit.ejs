@@ -5,8 +5,8 @@
 <form method="POST" action="/events/<%= event.id %>" enctype="multipart/form-data">
   <input type="hidden" name="_method" value="PUT" >
 
-  <input type="hidden" name="lat" id="lat">
-  <input type="hidden" name="lng" id="lng">
+  <input type="hidden" name="lat" id="lat" value="<%= event.lat %>">
+  <input type="hidden" name="lng" id="lng" value="<%= event.lng %>">
 
 
   <div>

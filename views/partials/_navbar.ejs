@@ -1,22 +1,17 @@
 <nav>
   <div class="top-bar">
     <ul>
+      <li><img id=logo class="border-0"></li>
       <% if(!locals.isLoggedIn) { %>
       <li><a href="/register">Register</a></li>
       <li><a href="/login">Login</a></li>
       <% } else { %>
-      <li><a href="/profile"><%= user.username %></a></li>
       <li><a href="/logout">Logout</a></li>
+        <li><a href="/profile"><%= user.username %></a></li>
     <% } %>
+      <li><a href="/events/new">Create Event</a></li>
+      <li><a href="/events">Browse Events</a></li>
+      <li><a href="/">Homepage</a></li>
     </ul>
-  <div >
-    <div>
-      <ul>
-        <li><a href="/events/new">Create Event</a></li>
-        <li><a href="/">Homepage</a></li>
-        <li><a href="/events">Browse Events</a></li>
-      </ul>
-    </div>
-    </div>
   </div>
 </nav>

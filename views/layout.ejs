@@ -5,20 +5,15 @@
   <title>BIG events</title>
   <% include ./partials/_stylesheets %>
   <% include ./partials/_scripts %>
-  <% include ./partials/_navbar %>
 </head>
-
-
-  <body>
-
-    <h1>BIG EVENTS</h1>
-
-    <main class="row">
+<body>
+  <main class="container">
+    <% include ./partials/_navbar %>
     <% for (const type in messages) { %>
-      <p class="alert alert-<%= type %>"><%= messages[type] %></p>
-      <% } %>
-      <%- body %>
-    </main>
+    <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+    <% } %>
+    <%- body %>
+  </main>
+</body>
 
-  </body>
 </html>

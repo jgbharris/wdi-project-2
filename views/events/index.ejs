@@ -1,20 +1,35 @@
-<form method="GET">
-  <label>Search by name</label>
-  <input type="text" name="q" placeholder="Search">
-</form>
 
+<div class="row">
+  <div class="col-4 offset-4">
+    <form method="GET">
+      <input id="searchboxindex" type="text" name="q" placeholder="Search by name">
+    </form>
+  </div>
+</div>
 
+<section id="eventsindex">
 
 
 <% events.forEach((event) => { %>
-  <div class="large-4 columns">
-    <a href="/events/<%= event.id %>">
-      <h2><%= event.name %></h2>
-      <p>
+  <div class="row event">
+
+    <div class="col-md-4">
+      <a href="/events/<%= event.id %>">
+        <img src="<%= event.imageSRC %>" alt="<%= event.name %>" class="img-fluid">
+      </a>
+    </div>
+
+    <div class="col-md-8">
+      <a href="/events/<%= event.id %>">
+        <h2 id="eventtitle"><%= event.name %></h2>
+      </a>
+      <p id="eventdetails">
         <%= event.location %><br>
         <%= event.date %><br>
-        <%= event.description %>
-    <h3>Created By: </h3>
-    <p><%= event.createdBy.username %></p>
+        <%= event.description %><br>
+        <%= event.createdBy.username %>
+      </p>
+    </div>
   </div>
 <% }) %>
+</section>
