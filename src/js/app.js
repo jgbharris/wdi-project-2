@@ -82,18 +82,18 @@ $(() => {
 
   backgroundChange();
 
-  // function testimonials() {
-  //   let count = 0;
-  //   const wordsArray = [`"Without this website my nightlife would be shit" - Kate Moss`, `"Nightlife website of the year" - New York Times`, `"This website is dope" - Kanye West`];
-  //   setInterval(function () {
-  //     count++;
-  //     $('#testimonials').fadeOut(400, function () {
-  //       $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
-  //     });
-  //   }, 2000);
-  //
-  // }
-  //
-  // testimonials()();
+  function testimonials() {
+    let count = 0;
+    const wordsArray = [`"Without this website my nightlife would be shit" - Kate Moss`, `"Nightlife website of the year" - New York Times`, `"This website is dope" - Kanye West`];
+    setInterval(function () {
+      count++;
+      $('#testimonials').fadeOut(400, function () {
+        $(this).text(wordsArray[count % wordsArray.length]).fadeIn(400);
+      });
+    }, 2000);
+  
+  }
+
+  testimonials()();
 
 });
