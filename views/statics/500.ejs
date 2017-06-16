@@ -1,6 +1,10 @@
-<h1>500: Internal Server Error</h1>
+<h1 id="pageTitle">500: Internal Server Error</h1>
 
-<h2><%= err.message %></h2>
+<div class="row">
+  <img class="col-6 offset-3" src="../assets/images/wrong.gif">
+</div>
+
+<h2 id="subheading"><%= err.message %></h2>
 
 <% if(locals.err.stack) { %>
 <pre>

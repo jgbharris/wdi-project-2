@@ -1,15 +1,23 @@
-<h1>Login</h1>
+<div class="jumbotron">
+</div>
+<h1 id="pageTitle">Login</h1>
 
 <form method="POST" action="/login">
-  <div>
+  <div id="formfield" class="col-6 offset-3">
     <label for="email">Email</label>
     <input type="text" name="email" id="email">
   </div>
-  <div>
+
+  <div id="formfield" class="col-6 offset-3">
     <label for="password">Password</label>
     <input type="password" name="password" id="password">
   </div>
 
-  <button class="button">Login</button>
-  <a href="<%= oauth.facebook.getLoginURL() %>" target="_blank" class="btn btn-primary">Login With facebook</a>
+  <div id="formfield" class="col-6 offset-3">
+    <button class="btn-primary" id="createButton">Login</button>
+  </div>
+
+  <div id="formfield" class="col-6 offset-3">
+      <button class="btn-primary" id="createButton"><a href="<%= oauth.facebook.getLoginURL() %>" target="_blank" >Login With facebook</a></button>
+  </div>
 </form>

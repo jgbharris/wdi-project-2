@@ -34,7 +34,7 @@ h1 {
 
 #location {
   #map {
-    height: 300px;
+    height: 250px;
     background-color: grey;
   }
 }
@@ -47,6 +47,7 @@ nav {
     margin: 0;
     li {
       font-family: 'Orbitron', sans-serif;
+      font-style: italic;
       float: right;
       margin-left: 20px;
       line-height: 40px;
@@ -71,7 +72,7 @@ nav {
 }
 
 #homeimage {
-  height: 70vh;
+  height: 60vh;
   background-image: url('../assets/images/homepage1.jpg');
   background-position: center;
   background-size: cover;
@@ -131,20 +132,23 @@ input {
   padding: 20px;
 }
 
+#profileName {
+  text-align: center;
+  padding: 15px;
+  font-family: 'Orbitron', sans-serif;
+}
+
 #createButton {
   text-align: center;
   width: 100%;
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
+  margin-bottom: 10px;
 }
 
-#imageUpload {
-  // text-align: center;
-  // width: 100%;
-}
 
 .jumbotron {
-  background-image: url('../assets/images/homepage1.jpg');
+  background-image: url('../assets/images/jumbotron.jpeg');
   height: 30vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -181,8 +185,67 @@ label {
   font-family: 'Orbitron', sans-serif;
   margin-bottom: 20px;
   margin-top: 20px;
+  border-top: 2px;
+  border-color: black;
 }
 
+a {
+  color: inherit;
+}
+
+#facebutton {
+width: 100%;
+text-align: center;
+}
+
+.userinfo {
+  width: 100%;
+  text-align: center;
+}
+
+#profilephoto {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 20px;
+}
+
+#eventimage {
+  width: 30%;
+  height: 30%;
+  margin-bottom: 20px;
+}
+
+#eventshowdeets {
+  font-size: 20px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#attendees {
+  font-size: 15px;
+  font-family: 'Poiret One', cursive;
+  font-weight: lighter;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+#corpinfo {
+  font-size: 8px;
+  text-align: center;
+}
+
+#testimonials {
+  font-size: 12px;
+  text-align: center;
+}
+
+#comment {
+  font-size: 12px;
+  text-align: center;
+
+}
 
 
 

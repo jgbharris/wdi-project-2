@@ -2,31 +2,33 @@
 
 <form method="POST" action="/profile" enctype="multipart/form-data">
 
-  <div>
+<div id="formfield" class="col-6 offset-3">
     <label for="image">Image</label>
     <input type="file" name="image" id="image">
   </div>
 
-  <div>
+  <div id="formfield" class="col-6 offset-3">
     <label for="firstName">First Name</label>
     <input type="text" name="firstName" id="firstName" value="<%= user.firstName %>">
   </div>
 
-  <div>
+  <div id="formfield" class="col-6 offset-3">
     <label for="lastName">Last Name</label>
     <input type="text" name="lastName" id="lastName" value="<%= user.lastName %>">
   </div>
 
-  <div>
+  <div id="formfield" class="col-6 offset-3">
     <label for="username">Username</label>
     <input type="text" name="username" id="username" value="<%= user.username %>">
   </div>
 
-  <div>
+  <div id="formfield" class="col-6 offset-3">
     <label for="email">Email</label>
     <input type="email" name="email" id="email" value="<%= user.email %>">
   </div>
 
+  <div id="formfield" class="col-6 offset-3">
+    <button id="createButton" class="btn-primary">Edit</button>
+  </div>
 
-  <button class="button">Edit</button>
 </form>

@@ -1,71 +1,81 @@
 
-<h1><%= event.name %></h1>
-<img src="<%= event.imageSRC %>" alt="<%= event.name %>">
+<h1 id="pageTitle"><%= event.name %></h1>
 
-<p>
-  <%= event.location %><br>
-  <%= event.postcode %><br>
-  <%= event.date %><br>
-  <%= event.description %><br>
-</p>
+<div class="row">
+    <img id="eventimage" class="col-8 offset-2" src="<%= event.imageSRC %>" alt="<%= event.name %>">
+</div>
+
+<div class="col-6 offset-3">
+  <p id="eventshowdeets">
+    <%= event.location %><br>
+    <%= event.postcode %><br>
+    <%= event.date %><br>
+    <%= event.description %><br>
+  </p>
+</div>
 
 <% if(locals.isLoggedIn) { %>
-  <section>
+  <section class="col-6 offset-3">
     <form method="POST" action="/events/<%= event.id %>/attendees">
-    <button class="button">Attend</button>
+    <button id="createButton" class="btn btn-success">Attend</button>
   </form>
   </section>
   <% } %>
 
-  <h4>Attendees</h4>
+<div id="attendees" class="col-6 offset-3">
+  <p id="subheading">Attendees</p>
   <% event.attendees.forEach((attendee) => { %>
     <p><%= attendee.fullName %></p>
   <% }) %>
+</div>
 
 <section id="location">
-  <div class="container">
     <div class="row">
       <div class="col-sm-10 offset-sm-1">
-        <h2>Location</h2>
+        <p id="subheading">Location</p>
         <div id="map" data-lat="<%= event.lat %>" data-lng="<%= event.lng %>"></div>
       </div>
     </div>
-  </div>
 </section>
 
 <% if(locals.isLoggedIn) { %>
-  <section>
-    <h4>Leave comment</h4>
-    <form method="POST" action="/events/<%= event.id %>/comments">
-    <textarea name="content" id="content" placeholder="Comment"></textarea>
-    <button class="button">Leave a comment</button>
+  <section class="col-6 offset-3">
+    <p  id="subheading">Leave comment</p>
+
+    <form  method="POST" action="/events/<%= event.id %>/comments">
+
+    <textarea class="col-6 offset-3" name="content" id="content" placeholder="Comment"></textarea>
+    <button id="createButton" class="btn btn-success">Leave a comment</button>
+
   </form>
   </section>
   <% } %>
   <section>
-    <h4>Comments</h4>
+    <p id="subheading">Comments</p>
+
     <% event.comments.forEach((comment) => { %>
-      <p><%= comment.content %></p>
-      <small><%= comment.createdBy.username %></small>
+      <p id="comment" class="col-6 offset-3"><%= comment.content %></p>
+      <p id="comment"><%=`Posted by ${comment.createdBy.username}` %></p>
 
       <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
         <form method="POST" action="/events/<%= event.id %>/comments/<%= comment.id %>">
         <input type="hidden" name="_method" value="DELETE">
-        <button>Delete comment</button>
+        <button id="createButton" class="col-6 offset-3 btn btn-danger" >Delete comment</button>
         </form>
         <%  } %>
         <% }) %>
       </section>
 
 
-      <h3>Created By: </h3>
-      <p><%= event.createdBy.username %></p>
+      <p id="corpinfo"><%= `Created by ${event.createdBy.username}` %></p>
 
       <% if(locals.isLoggedIn && event.belongsTo(user)) { %>
-        <a href="/events/<%= event.id %>/edit">Edit</a>
+        <button id="createButton" class="col-6 offset-3 btn-primary"><a href="/events/<%= event.id %>/edit">Edit</a><button>
+
         <form method="POST" action="/events/<%= event.id %>">
         <input type="hidden" name="_method" value="DELETE">
-        <button>Delete event</button>
+
+        <button id="createButton" class=" col-6 offset-3 btn btn-danger">Delete event</button>
         </form>
         <% } %>
 

@@ -1,13 +1,32 @@
-<h1><%= user.username %></h1>
-  <img src="<%= user.imageSRC %>" alt="<%= user.username %>">
-<h4><%= user.firstName %></h4>
-<h4><%= user.lastName %></h4>
+<h1 id="pageTitle">User profile</h1>
 
-<p><%= user.email %></p>
+<h2 id="profileName"><%= user.username %></h2>
 
-<a href="/profile/edit" class="button">Edit</a>
+<div class="row">
+  <img id="profilephoto" class="col-6 offset-3" src="<%= user.imageSRC %>" alt="<%= user.username %>">
+</div>
+
+
+<div id="formfield" class="col-6 offset-3">
+  <p class="userinfo"><%= user.firstName %></p>
+</div>
+
+<div id="formfield" class="col-6 offset-3">
+  <p class="userinfo"><%= user.lastName %></p>
+</div>
+
+<div id="formfield" class="col-6 offset-3">
+  <p class="userinfo"><%= user.email %></p>
+</div>
+
+<div id="formfield" class="col-6 offset-3">
+  <button id="createButton" class="btn-primary"><a href="/profile/edit" class="button">Edit</a></button>
+</div>
 
 <form method="POST" action="/profile">
   <input type="hidden" name="_method" value="DELETE">
-  <button class="button alert">Delete</button>
+  <div id="formfield" class="col-6 offset-3">
+  <button id="createButton" class="btn-primary">Delete</button>
+</div>
+
 </form>
