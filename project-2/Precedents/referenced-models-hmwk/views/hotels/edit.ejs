@@ -1,0 +1,33 @@
+<h1>Edit</h1>
+
+<div class="row">
+  <form class="six columns" method="POST" action="/cars/<%= car.id %>">
+    <input type="hidden" name="_method" value="PUT">
+    <div>
+      <label for="model">Model</label>
+      <input class="u-full-width" type="text" name="model" id="model" value="<%= car.model %>" required>
+    </div>
+
+    <div>
+      <label for="brand">Brand</label>
+      <input class="u-full-width" type="text" name="brand" id="brand" value="<%= car.brand %>" required>
+    </div>
+
+    <div>
+      <label for="speed">Speed</label>
+      <input class="u-full-width" type="text" name="speed" id="speed" value="<%= car.speed %>" required>
+    </div>
+
+    <div>
+      <label for="acceleration">Acceleration</label>
+      <input class="u-full-width" type="text" name="acceleration" id="acceleration" value="<%= car.acceleration %>" required>
+    </div>
+
+    <div>
+      <label for="image">Image</label>
+      <input class="u-full-width" type="text" name="image" id="image" value="<%= car.image %>" required>
+    </div>
+
+    <button class="button-primary u-full-width">Edit</button>
+  </form>
+</div>

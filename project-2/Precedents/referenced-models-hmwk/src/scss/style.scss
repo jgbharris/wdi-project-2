@@ -1,0 +1,11 @@
+nav {
+  background-color: lightblue !important;
+  a {
+    &.nav-link {
+      color: white !important;
+    }
+    &.navbar-brand {
+      color: white !important;
+    }
+  }
+}

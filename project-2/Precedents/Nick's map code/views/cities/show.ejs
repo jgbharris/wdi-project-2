@@ -1,0 +1,22 @@
+<div class="card">
+  <img class="card-img-top" src="<%= city.image %>" width="100%">
+  <div class="card-block">
+    <h3 class="card-title" data-location="<%= JSON.stringify({ lat: city.lat, lng: city.lng }) %>"><%= city.name %></h3>
+    <h4 class="card-title"><%= city.country %></h4>
+    <p class="card-text">Population: <%= city.population.toLocaleString() %></p>
+    <p class="card-text">Current Weather: <span class="weather"></span></p>
+    <hr />
+    <form>
+    <label>Event Radius</label><input type="range" id="radius" value="10" min="5" max="20">
+    <p id="miles"></p>
+  </form>
+  <hr />
+    <p class="card-text"><span class= "event-name"></span></p>
+    <hr />
+    <a class="btn btn-primary" href="/cities/<%= city.id %>/edit">Edit</a>
+    <form action="/cities/<%= city.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn btn-danger">Delete</button>
+    </form>
+  </div>
+</div>

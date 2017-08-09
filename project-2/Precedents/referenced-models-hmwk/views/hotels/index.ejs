@@ -1,0 +1,12 @@
+<h1>Cars</h1>
+<div class="row">
+  <% cars.forEach((car) => { %>
+    <div class="col-md-6">
+      <img class="img-fluid" src="<%= car.image %>" alt="<%= car.model %>">
+      <a href="/cars/<%= car.id %>"><h3><%= car.model %></h3></a>
+      <h6><%= car.brand %></h6>
+      <h6><%= car.speed %></h6>
+      <h6><%= car.acceleration %></h6>
+    </div>
+  <% }) %>
+</div>

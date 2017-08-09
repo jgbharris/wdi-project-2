@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>The Donut Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1>Donut Shop</h1>
+    <form id="new-donut">
+      <input type="text" name='donut[flavor]' id="donut-flavor" placeholder="What type of donut?" value="Chocolate">
+      <select name="donut[style]" id="donut-style">
+        <option value="Old Fashioned">Old Fashioned</option>
+        <option value="Cake">Cake</option>
+        <option value="French Cruller">French Cruller</option>
+        <option value="Yeast">Yeast</option>
+      </select>
+      <input type="submit" value='Save My Donut'>
+    </form>
+  </body>
+  <ul id="donuts">
+  </ul>
+</html>

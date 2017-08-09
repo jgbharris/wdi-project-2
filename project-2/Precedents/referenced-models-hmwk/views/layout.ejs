@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Referenced Models</title>
+  <% include ./partials/_stylesheets.ejs %>
+  <% include ./partials/_scripts.ejs %>
+</head>
+<body>
+  <% include ./partials/_navbar %>
+
+  <% for(const type in messages) { %>
+    <div class="callout <%= type %>">
+    <h5><%= messages[type] %></h5>
+    </div>
+    <% } %>
+
+    <main class="row">
+      <%- body %>
+    </main>
+
+    <% include ./partials/_scripts.ejs %>
+  </body>
+  </html>

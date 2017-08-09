@@ -1,0 +1,13 @@
+<% cars.forEach((car) => { %>
+  <div class="large-4 columns">
+    <a href="/cars/<%= car.id %>">
+      <img class="thumbnail" src="<%= car.image %>" alt="<%= car.model %>">
+      <h2><%= car.model %></h2>
+      <p>
+        <%= car.brand %><br>
+        <%= car.speed %><br>
+        <%= car.acceleration %>
+    <h3>Created By: </h3>
+    <p><%= car.createdBy.username %></p>
+  </div>
+<% }) %>

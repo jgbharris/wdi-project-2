@@ -1,0 +1,48 @@
+<div class="large-12 columns">
+  <img src="<%= car.image %>" alt="<%= car.model %>">
+  <h2><%= car.model %></h2>
+
+  <p>
+    <%= car.brand %><br>
+    <%= car.speed %><br>
+    <%= car.acceleration %><br>
+  </p>
+
+  <% if(locals.isLoggedIn) { %>
+    <section>
+      <h4>Leave comment</h4>
+      <form method="POST" action="/cars/<%= car.id %>/comments">
+      <textarea name="content" id="content" placeholder="Comment"></textarea>
+      <button class="button">Leave a comment</button>
+      </form>
+    </section>
+  <% } %>
+  <section>
+    <h4>Comments</h4>
+    <% car.comments.forEach((comment) => { %>
+      <p><%= comment.content %></p>
+      <small><%= comment.createdBy.username %></small>
+
+      <% if(locals.isLoggedIn && comment.belongsTo(user)) { %>
+        <form method="POST" action="/cars/<%= car.id %>/comments/<%= comment.id %>">
+          <input type="hidden" name="_method" value="DELETE">
+          <button>Delete comment</button>
+        </form>
+    <%  } %>
+  <% }) %>
+  </section>
+
+
+
+  <h3>Created By: </h3>
+  <p><%= car.createdBy.username %></p>
+
+  <% if(locals.isLoggedIn && car.belongsTo(user)) { %>
+    <a href="/cars/<%= car.id %>/edit">Edit</a>
+    <form method="POST" action="/cars/<%= car.id %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <button>Delete car</button>
+    </form>
+  <% } %>
+
+</div>
