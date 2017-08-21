@@ -1,13 +1,13 @@
-#Big Events - WDI Project 2 - JimBO Harris
+# Big Events - WDI Project 2 - JimBO Harris
 
-##Installation and setup
+## Installation and setup
 *Download or clone the repo.
 * `yarn` to install dependencies.
 * `gulp` to compile the source code and open in browser.
 
 ## Description
 
-The site is an event website which allows users to post events as well as keep track of attendees. Users can post the location of their event and login via facebook.
+The site is an event website which allows users to post events as well as keep track of attendees. Users can post the location of their event and login via facebook. Google maps API was used to provide location data.
 
 ## Technologies used
 
